@@ -8,19 +8,38 @@
       </b-row>
     </b-container>
     <hr>
-    <blog-item-component></blog-item-component>
+  <blog-item-component :blogs="this.blogs"></blog-item-component>
   </div>
 </template>
 
 <script>
 import BlogItemComponent from '@/components/BlogItemComponent.vue'
 // @ is an alias to /src
+import BeApp from '@/helpers/api_call/BeApp'
 
 export default {
+ 
   name: 'HomeView',
+  data: function() {
+    return {
+      blogs:null
+    };
+},
   components: {
     BlogItemComponent
+  },
+  methods :{
+     getBlogs(){
+      BeApp.getBlogs().then((data)=>{
+        this.blogs = data.data.data
+      })
+      
+    }
+  },
+  mounted() {
+    this.getBlogs();
   }
+
 }
 </script>
 <style scoped>
