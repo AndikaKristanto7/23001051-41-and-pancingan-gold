@@ -1,20 +1,21 @@
 <template>
-    <footer>
+    <footer class="mb-100">
+            
         <b-container class="footer-info">
-            <b-row>
-                <b-col>
+            <b-row class="">
+                <b-col class="mt-2">
                     <h6 class="text-uppercase bold">Pancingan</h6>
                     <p>
                         Here you can use rows and columns to organize your footer content. Lorem ipsum
                         dolor sit amet, consectetur adipisicing elit.
                     </p>
                 </b-col>
-                <b-col>
+                <b-col class="mt-2">
                     <h6 class="text-uppercase bold">Stack</h6>
                     <p>Vue</p>
                     <p>Express</p>
                 </b-col>
-                <b-col>
+                <b-col class="mt-2">
                     <h6 class="text-uppercase bold">Contact</h6>
                     <p>
                         <!-- <i class="fas fa-home me-3"></i> -->
@@ -41,6 +42,7 @@ export default {
 <style scoped>
 
 footer{
+    position: relative;
     bottom: 0;
     width: 100%;
     height: 150px;

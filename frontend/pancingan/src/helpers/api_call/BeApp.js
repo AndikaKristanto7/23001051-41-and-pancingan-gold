@@ -23,11 +23,11 @@ class BeApp {
     return httpCall.get(`${this.blog}/${slug}`)
   }
 
-  editBlog(slug){
-    return httpCall.put(`${this.blog}/${slug}`)
+  updateBlogBySlug(slug,data){
+    return httpCall.put(`${this.blog}/${slug}`,data)
   }
 
-  deleteBlog(slug){
+  deleteBlogBySlug(slug){
     return httpCall.delete(`${this.blog}/${slug}`)
   }
 

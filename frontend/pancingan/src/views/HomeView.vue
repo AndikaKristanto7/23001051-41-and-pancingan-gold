@@ -1,14 +1,14 @@
 <template>
-  <div class="home">
+  <div class="home d-flex flex-column min-vh-100">
     <b-container>
       <b-row>
         <b-col>
           <h1>Selamat datang di Pancingan</h1>
         </b-col>
       </b-row>
-    </b-container>
     <hr>
-  <blog-item-component :blogs="this.blogs"></blog-item-component>
+    <blog-item-component :blogs="this.blogs"></blog-item-component>
+    </b-container>
   </div>
 </template>
 

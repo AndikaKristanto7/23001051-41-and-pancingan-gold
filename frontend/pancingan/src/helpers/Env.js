@@ -16,6 +16,12 @@ module.exports = function () {
       if (param === 'API_URL') {
         return process.env.VUE_APP_API_URL
       }
+      if(param === 'TINYMCE_API_KEY'){
+        return process.env.VUE_APP_TINYMCE_API_KEY
+      }
+      if(param === 'GMAP_API_KEY'){
+        return process.env.VUE_APP_GMAP_API_KEY
+      }
       
       return ''
     }

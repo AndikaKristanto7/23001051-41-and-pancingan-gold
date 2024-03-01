@@ -3,8 +3,11 @@
         <b-container v-for="(item,index) in blogs" :key="index">
             <b-row>
                 <b-col>
-                    <h2 class="font-weight-bold">{{ item.title }}</h2>
-                    <p class="text-left">{{ item.description }}</p>
+                    <router-link :to="{name : 'blog',params : {'slug' : item.slug}}">
+                        <h2 class="font-weight-bold">{{ item.title }}</h2>
+                    </router-link>
+                    <span v-html="readMore(item.description)" class="text-left"></span>
+                    
                 </b-col>
             </b-row>
         </b-container>
@@ -15,23 +18,20 @@ export default {
     name:"BlogItemComponent",
     props:{
         blogs: {
-            type:Object,
+            type:Array,
             default : () =>{
-                return {
-                    id:'',
-                    slug:'',
-                    title:'',
-                    description:''
-                }
+                return []
             }
         },
-        test : {
-            type:String,
-            default : "test"
-        }
     },
-    mounted(){
-        console.log(this.props)
+    methods:{
+        readMore(text){
+           let newText = text.slice(0,500)
+           if(newText.length >= 500){
+                newText = `${newText}...`
+           }
+           return newText
+        }
     }
 }
 </script>
